@@ -1,0 +1,27 @@
+{
+  "name": "@daochild/otc-contracts",
+  "version": "1.0.0",
+  "description": "OTC contracts on Ethereum",
+  "type": "module",
+  "scripts": {
+    "build": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "node": "npx hardhat node",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "deploy:goerli": "hardhat run scripts/deploy.ts --network goerli",
+    "deploy:mainnet": "hardhat run scripts/deploy.ts --network ethereum",
+    "ignition:local": "hardhat ignition deploy ignition/modules/LocalOTC.ts",
+    "ignition:goerli": "hardhat ignition deploy ignition/modules/OTC.ts --network goerli --parameters ignition/parameters.goerli.json",
+    "ignition:mainnet": "hardhat ignition deploy ignition/modules/OTC.ts --network ethereum --parameters ignition/parameters.mainnet.json"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-keystore": "^3.0.5",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.3",
+    "@types/mocha": "^10.0.10",
+    "dotenv": "^17.3.1",
+    "hardhat": "^3.2.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.6.1"
+  }
+}
